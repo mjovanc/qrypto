@@ -1,7 +1,7 @@
 # qrypto
 
-<!-- ![ci](https://img.shields.io/github/actions/workflow/status/[your-username]/qrypto/ci.yml?branch=main)
-![crates.io](https://img.shields.io/crates/v/qrypto.svg)
+![ci](https://img.shields.io/github/actions/workflow/status/mjovanc/qrypto/ci.yml?branch=main)
+<!-- ![crates.io](https://img.shields.io/crates/v/qrypto.svg)
 [![documentation](https://img.shields.io/badge/docs-qrypto-blue?logo=rust)](https://docs.rs/qrypto/latest/) -->
 
 A high-performance post-quantum cryptography library in Rust.

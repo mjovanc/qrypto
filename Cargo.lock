@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "zk-rs"
+name = "qrypto"
 version = "0.1.0"
