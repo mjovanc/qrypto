@@ -1,0 +1,16 @@
+[package]
+name = "qrypto"
+version = "0.1.0"
+edition = "2021"
+authors = ["Marcus Cvjeticanin <mjovanc@icloud.com>"]
+description = "A simple and fast post-quantum cryptography library in Rust."
+license = "MIT"
+documentation = "https://docs.rs/qrypto/latest/qrypto/"
+repository = "https://github.com/mjovanc/qrypto"
+readme = "README.md"
+rust-version = "1.83.0"
+homepage = "https://github.com/mjovanc/qrypto"
+keywords = ["post-quantum", "pqc", "cryptography", "quantum-safe", "encryption"]
+
+[badges]
+maintenance = { status = "actively-developed" }
