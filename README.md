@@ -3,7 +3,6 @@
 ![ci](https://img.shields.io/github/actions/workflow/status/mjovanc/qrypto/ci.yml?branch=master)
 ![crates.io](https://img.shields.io/crates/v/qrypto.svg)
 [![documentation](https://img.shields.io/badge/docs-qrypto-blue?logo=rust)](https://docs.rs/qrypto/latest/)
-![license](https://img.shields.io/github/license/mjovanc/qrypto)
 
 A high-performance post-quantum cryptography library in Rust.
 
