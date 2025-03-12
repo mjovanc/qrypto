@@ -23,6 +23,41 @@ Add `qrypto` to your project:
 qrypto = "0.1.0"
 ```
 
+### Basic Example
+
+Here’s a quick example of encrypting and decrypting a message with Kyber:
+
+```rust
+fn main() -> Result<(), QryptoError> {
+    let (public_key, secret_key) = Kyber::keypair()?;
+    let plaintext = b"Hello, quantum-safe world!";
+    let (ciphertext, shared_secret_enc) = Kyber::encrypt(&public_key, plaintext)?;
+    let shared_secret_dec = Kyber::decrypt(&secret_key, &ciphertext)?;
+    assert_eq!(shared_secret_enc, shared_secret_dec);
+    Ok(())
+}
+```
+
+## Supported Features
+
+Below is a table of currently supported features and planned additions.
+
+| Feature                  | Description                                      | Status  | Notes                                                                 |
+|--------------------------|--------------------------------------------------|---------|----------------------------------------------------------------------|
+| **Kyber (KEM)**          | Key Encapsulation Mechanism (NIST-standard)      | Planned | Supports Kyber512, Kyber768, Kyber1024 for varying security levels.  |
+| **Dilithium (Signatures)** | Digital signature scheme (NIST-standard)        | Planned | Includes Dilithium2, Dilithium3, Dilithium5 variants.                |
+| **Hybrid Encryption**    | Combines PQC with classical algorithms           | Planned | Will support AES-256 integration for backward compatibility.         |
+| **Key Generation**       | Secure keypair generation                        | Planned | Uses cryptographically secure RNGs via `rand` crate.                 |
+| **Serialization**        | Key and ciphertext serialization/deserialization | Planned | Planned support for PEM, DER, and binary formats.                    |
+| **FIPS Compliance**      | Adherence to FIPS 140-3 standards                | Planned | Targeting validation for enterprise use cases.                       |
+| **Side-Channel Resistance** | Protection against timing/power attacks       | Planned | Implementing constant-time operations where applicable.              |
+| **Benchmarking**         | Performance testing suite                        | Planned | To compare against classical crypto and other PQC libraries.         |
+| **WASM Support**         | WebAssembly compatibility                        | Planned | For browser-based applications and lightweight deployments.          |
+
+## Contributing
+
+Before contributing, please read the [contribution](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) guide for useful information how to get started with `qrypto` as well as what should be included when submitting a contribution to the project.
+
 ## License
 
 The MIT License.
