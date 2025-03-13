@@ -1,14 +1,24 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use error::QryptoError;
+use traits::KeyEncapsulation;
+
+pub mod algorithms;
+pub mod error;
+pub mod traits;
+mod util;
+
+pub fn generate_keypair<A: KeyEncapsulation>() -> Result<A::KeyPair, QryptoError> {
+    A::generate_keypair()
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub fn encapsulate<A: KeyEncapsulation>(
+    pk: &A::PublicKey,
+) -> Result<(Vec<u8>, Vec<u8>), QryptoError> {
+    A::encapsulate(pk)
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn decapsulate<A: KeyEncapsulation>(
+    sk: &A::SecretKey,
+    ciphertext: &[u8],
+) -> Result<Vec<u8>, QryptoError> {
+    A::decapsulate(sk, ciphertext)
 }

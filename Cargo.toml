@@ -14,3 +14,11 @@ keywords = ["post-quantum", "pqc", "cryptography", "quantum-safe", "encryption"]
 
 [badges]
 maintenance = { status = "actively-developed" }
+
+[dependencies]
+thiserror = "2.0"
+rand = "0.8"
+
+[[example]]
+name = "kyber"
+path = "examples/kyber.rs"
