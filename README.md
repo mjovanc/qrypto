@@ -28,12 +28,22 @@ qrypto = "0.1.0"
 Here’s a quick example of encrypting and decrypting a message with Kyber:
 
 ```rust
-fn main() -> Result<(), QryptoError> {
-    let (public_key, secret_key) = Kyber::keypair()?;
-    let plaintext = b"Hello, quantum-safe world!";
-    let (ciphertext, shared_secret_enc) = Kyber::encrypt(&public_key, plaintext)?;
-    let shared_secret_dec = Kyber::decrypt(&secret_key, &ciphertext)?;
-    assert_eq!(shared_secret_enc, shared_secret_dec);
+use qrypto::{algorithms::Kyber512, decapsulate, encapsulate, generate_keypair};
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Alice generates a Kyber512 key pair
+    let keypair = generate_keypair::<Kyber512>()?;
+
+    // Bob encapsulates a shared secret using Alice's public key
+    let (ciphertext, shared_secret_bob) = encapsulate::<Kyber512>(keypair.public_key())?;
+
+    // Alice decapsulates the ciphertext to get the same shared secret
+    let shared_secret_alice = decapsulate::<Kyber512>(&keypair.secret_key(), &ciphertext)?;
+
+    // Verify they match (in a real impl, they will)
+    assert_eq!(shared_secret_alice, shared_secret_bob);
+    println!("Shared secret (Kyber512): {:?}", shared_secret_alice);
+
     Ok(())
 }
 ```
