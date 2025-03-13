@@ -94,7 +94,11 @@ Below is a table of currently supported features and planned additions for `qryp
 
 `qrypto` is currently an experimental library (version 0.1.0) and **not recommended for production use**. As a post-quantum cryptography tool, its security and reliability depend heavily on rigorous peer review, which has not yet been conducted. We are actively developing the features listed above, and they are marked as planned "🏗️" in the Supported Features table until fully implemented and tested.
 
-We warmly invite the community to participate in peer reviewing specific aspects of `qrypto` once they are considered "Done" in the status column of the table. Features marked "Done" will have completed implementation and initial testing by the development team, making them ready for external scrutiny. Peer review is critical to ensure cryptographic soundness, side-channel resistance, and practical usability. If you’re interested in contributing, please check the [contribution guide](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) for details on how to get involved, and watch the table for updates as features move to "Done" status. Your expertise can help make `qrypto` a trusted PQC solution!
+We warmly invite the community to participate in peer reviewing specific aspects of `qrypto` once they are considered done in the status column of the table.
+Features marked "✅" will have completed implementation and initial testing by the development team, making them ready for external scrutiny.
+Peer review is critical to ensure cryptographic soundness, side-channel resistance, and practical usability. If you’re interested in contributing,
+please check the [contribution guide](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) for details on how to get involved,
+and watch the table for updates as features move to "✅" status. Your expertise can help make `qrypto` a trusted PQC solution!
 
 ## Contributing
 
