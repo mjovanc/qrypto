@@ -108,7 +108,7 @@ We’re working toward a fully featured Rust PQC library. Planned milestones inc
 - **Version 0.3.0**: Add full Dilithium support (Dilithium2, Dilithium3, Dilithium5) for digital signatures (NIST FIPS 204).
 - **Version 0.4.0**: Add full SPHINCS+ support (SPHINCS+-128s, 128f, 256s, 256f) and hybrid encryption with AES-256-GCM (NIST FIPS 205).
 
-Check the [GitHub Issues](https://github.com/mjovanc/qrypto/issues) for the latest priorities and to suggest features.
+_Check the [GitHub Issues](https://github.com/mjovanc/qrypto/issues) for the latest priorities and to suggest features._
 
 ## Getting Help
 
