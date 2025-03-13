@@ -23,6 +23,16 @@ Add `qrypto` to your project:
 qrypto = "0.1.0"
 ```
 
+To test the latest code directly from the Git repository (recommended for trying out in-development features), use the following dependency instead:
+
+```toml
+[dependencies]
+qrypto = { git = "https://github.com/mjovanc/qrypto.git", branch = "master" }
+```
+
+The Git version pulls the most recent updates from the master branch at [https://github.com/mjovanc/qrypto](https://github.com/mjovanc/qrypto),
+which may include features not yet released in the [crates.io](https://crates.io/crates/qrypto) version (`0.1.0`). Be aware that this is experimental and subject to change!
+
 ### Basic Example
 
 Here’s a quick example of encrypting and decrypting a message with Kyber:
@@ -79,6 +89,12 @@ Below is a table of currently supported features and planned additions for `qryp
 | **no_std Support**         | Compatibility with no_std environments                   | 🏗️ | Enables use in embedded systems without Rust standard library dependencies.             |
 | **Async Support**          | Integration with async runtimes (e.g., tokio)            | 🏗️ | Supports asynchronous operations for networking and server applications.                |
 | **CLI Interface**          | Command-line tool for quick PQC tasks                    | 🏗️ | Allows users to encrypt, sign, or generate keys via CLI (e.g., `qrypto encrypt ...`).   |
+
+## Peer Reviewing
+
+`qrypto` is currently an experimental library (version 0.1.0) and **not recommended for production use**. As a post-quantum cryptography tool, its security and reliability depend heavily on rigorous peer review, which has not yet been conducted. We are actively developing the features listed above, and they are marked as planned "🏗️" in the Supported Features table until fully implemented and tested.
+
+We warmly invite the community to participate in peer reviewing specific aspects of `qrypto` once they are considered "Done" in the status column of the table. Features marked "Done" will have completed implementation and initial testing by the development team, making them ready for external scrutiny. Peer review is critical to ensure cryptographic soundness, side-channel resistance, and practical usability. If you’re interested in contributing, please check the [contribution guide](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) for details on how to get involved, and watch the table for updates as features move to "Done" status. Your expertise can help make `qrypto` a trusted PQC solution!
 
 ## Contributing
 
