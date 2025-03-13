@@ -100,9 +100,44 @@ Peer review is critical to ensure cryptographic soundness, side-channel resistan
 please check the [contribution guide](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) for details on how to get involved,
 and watch the table for updates as features move to "✅" status. Your expertise can help make `qrypto` a trusted PQC solution!
 
+## Roadmap
+
+## Getting Help
+
+Are you having trouble with `qrypto`? We want to help!
+
+- Read through the documentation on our [docs](https://docs.rs/qrypto/latest/qrypto/).
+
+- If you’d like to discuss `qrypto`, head over to [GitHub Discussions](https://github.com/mjovanc/qrypto/discussions) and join the conversation.
+
+- If you are upgrading, read the release notes to be informed about breaking changes.
+
+- Ask a question we monitor stackoverflow.com for questions tagged with `qrypto`.
+
+- Report bugs with `qrypto` at https://github.com/mjovanc/qrypto/issues.
+
+## Reporting Issues
+
+`qrypto` uses GitHub’s integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
+
+- Before you log a bug, please search the issue tracker to see if someone has already reported the problem.
+
+- If the issue doesn’t already exist, create a new issue.
+
+- Please provide as much information as possible with the issue report. We like to know the `qrypto` version, operating system, and Rust version version you’re using.
+
+- If you need to paste code or include a stack trace, use Markdown. ``` escapes before and after your text.
+
+- If possible, try to create a test case or project that replicates the problem and attach it to the issue.
+
 ## Contributing
 
 Before contributing, please read the [contribution](https://github.com/mjovanc/qrypto/blob/master/CONTRIBUTING.md) guide for useful information how to get started with `qrypto` as well as what should be included when submitting a contribution to the project.
+
+## Acknowledgements
+
+`qrypto` builds on [NIST](https://www.nist.gov)’s post-quantum cryptography standards (FIPS 203, 204, 205) and leverages the Rust ecosystem,
+including the rand crate for secure RNG. Thanks to the Rust community and PQC researchers for paving the way!
 
 ## License
 
