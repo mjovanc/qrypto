@@ -70,25 +70,6 @@ Below is a table of currently supported features and planned additions for `qryp
 | **HQC (KEM)**              | Code-based Key Encapsulation Mechanism (NIST-standard)   | 🏗️ | Supports HQC-128, HQC-192, HQC-256; added to NIST standards March 11, 2025.             |
 | **Hybrid Encryption**      | Combines PQC with classical algorithms                   | 🏗️ | Will support AES-256-GCM or ChaCha20-Poly1305 for authenticated encryption.             |
 | **Hybrid Public-Key Crypto** | Combines PQC with RSA/ECC for transitional use         | 🏗️ | Enables dual KEMs or signatures (e.g., Kyber + RSA) for legacy compatibility.           |
-| **Authenticated Encryption (AEAD)** | PQC-based symmetric encryption with authentication | 🏗️ | Integrates KEM-shared secrets with AES-GCM/ChaCha20-Poly1305 for secure data protection.|
-| **Key Derivation**         | Derives symmetric keys from KEM outputs                  | 🏗️ | Uses HKDF with SHAKE256 for secure key stretching and derivation.                       |
-| **Key Generation**         | Secure keypair generation                                | 🏗️ | Uses cryptographically secure RNGs via `rand` crate for all algorithms.                 |
-| **Key Serialization**      | Key and ciphertext serialization/deserialization         | 🏗️ | Supports PEM, DER, and binary formats for keys and ciphertexts.                         |
-| **Key Wrapping**           | Encrypts private keys with passphrase protection         | 🏗️ | Uses PBKDF2 or Argon2 to secure stored keys with user-provided passphrases.             |
-| **Message Authentication** | Provides MACs using PQC-derived keys                     | 🏗️ | Implements HMAC-SHAKE256 or Poly1305 for lightweight authentication.                    |
-| **Batch Signing/Verification** | Efficiently processes multiple signatures           | 🏗️ | Allows signing/verifying multiple messages in one call for performance.                 |
-| **File Encryption/Decryption** | High-level API for encrypting/decrypting files       | 🏗️ | Simplifies file security (e.g., `encrypt_file(pubkey, "file.txt")`).                    |
-| **Secure Messaging**       | End-to-end encrypted message exchange                    | 🏗️ | Provides a simple API for messaging (e.g., `secure_message(pubkey, "hello")`).          |
-| **Certificate Signing**    | Generates/verifies PQC signatures for certificates       | 🏗️ | Supports X.509-like certificates with Dilithium or SPHINCS+ signatures.                 |
-| **Key Agreement Protocol** | Full key exchange protocol using KEMs                    | 🏗️ | High-level API for initiator/responder key exchange (e.g., Kyber or HQC).               |
-| **Standard Format Support**| Compatibility with OpenPGP, CMS, JOSE (JWK/JWE)          | 🏗️ | Enables interoperability with existing crypto ecosystems.                               |
-| **FIPS Compliance**        | Adherence to FIPS 140-3 standards                        | 🏗️ | Targets validation for enterprise use cases across all algorithms.                      |
-| **Side-Channel Resistance** | Protection against timing/power attacks                | 🏗️ | Implements constant-time operations for all cryptographic primitives.                   |
-| **Benchmarking**           | Performance testing suite                                | 🏗️ | Compares against classical crypto and other PQC libraries (e.g., via `criterion`).      |
-| **WASM Support**           | WebAssembly compatibility                                | 🏗️ | For browser-based applications and lightweight deployments; JavaScript-friendly APIs.   |
-| **no_std Support**         | Compatibility with no_std environments                   | 🏗️ | Enables use in embedded systems without Rust standard library dependencies.             |
-| **Async Support**          | Integration with async runtimes (e.g., tokio)            | 🏗️ | Supports asynchronous operations for networking and server applications.                |
-| **CLI Interface**          | Command-line tool for quick PQC tasks                    | 🏗️ | Allows users to encrypt, sign, or generate keys via CLI (e.g., `qrypto encrypt ...`).   |
 
 ## Peer Reviewing
 
