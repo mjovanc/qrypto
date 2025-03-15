@@ -45,10 +45,7 @@ impl KeyEncapsulation for Kyber512 {
     fn generate_keypair() -> Result<Self::KeyPair, QryptoError> {
         let pk = generate_random_bytes(KYBER512_PK_SIZE)?;
         let sk = generate_random_bytes(KYBER512_SK_SIZE)?;
-        Ok(KyberKeyPair {
-            public_key: pk,
-            secret_key: sk,
-        })
+        Ok(KyberKeyPair { public_key: pk, secret_key: sk })
     }
 
     fn encapsulate(pk: &Self::PublicKey) -> Result<(Vec<u8>, Vec<u8>), QryptoError> {
@@ -66,5 +63,24 @@ impl KeyEncapsulation for Kyber512 {
         }
         let shared_secret = generate_random_bytes(SHARED_SECRET_SIZE)?;
         Ok(shared_secret)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::{decapsulate, encapsulate, generate_keypair};
+
+    use super::*;
+
+    #[test]
+    fn kyber512_key_exchange() {
+        let keypair = generate_keypair::<Kyber512>().expect("Keypair generation failed");
+
+        let (ciphertext, shared_secret_bob) = encapsulate::<Kyber512>(keypair.public_key()).expect("Encapsulation failed");
+
+        let shared_secret_alice = decapsulate::<Kyber512>(&keypair.secret_key(), &ciphertext).expect("Decapsulation failed");
+
+        assert_eq!(shared_secret_alice, shared_secret_bob, "Shared secrets do not match!");
+        assert!(!shared_secret_alice.is_empty(), "Shared secret is empty!");
     }
 }

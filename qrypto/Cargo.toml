@@ -26,7 +26,3 @@ criterion = "0.5"
 name = "kyber"
 harness = false
 path = "benches/algorithms/kyber.rs"
-
-[[example]]
-name = "kyber"
-path = "examples/kyber.rs"
